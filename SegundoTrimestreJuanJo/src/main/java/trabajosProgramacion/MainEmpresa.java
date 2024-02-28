@@ -49,7 +49,7 @@ public class MainEmpresa {
 		int opcion;
 		do {
 			String menu[] = { "0. Ingresar un empleado", "1. Ingresar un becario", "2. Ingresar un jefe", "3. Salir" };
-			opcion = JOptionPane.showOptionDialog(null, "selecciona lo que deseas realizar", null, 0, 0, null, menu,
+			opcion = JOptionPane.showOptionDialog(null, "Selecciona lo que deseas realizar", null, 0, 0, null, menu,
 					menu);
 			switch (opcion) {
 			case 0:
