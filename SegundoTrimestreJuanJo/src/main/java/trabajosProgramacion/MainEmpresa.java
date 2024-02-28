@@ -15,7 +15,6 @@ public class MainEmpresa {
 		menu(listaEmpleados);
 		printArrayList(listaEmpleados);
 		printSueldosCategorias();
-
 	}
 
 	static void setEmpleados(ArrayList<Empleado> empleado, int tipo) {
