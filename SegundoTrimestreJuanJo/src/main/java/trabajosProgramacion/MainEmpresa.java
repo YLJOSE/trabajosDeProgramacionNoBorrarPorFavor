@@ -41,7 +41,6 @@ public class MainEmpresa {
 			Jefe j1 = new Jefe(nombre, sueldoNuevo, primaNuevo);
 			empleado.add(j1);
 			totalSueldosJefe += sueldoNuevo;
-
 		}
 	}
 
