@@ -2,8 +2,9 @@ package variableStatic;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import trabajosProgramacion.Empleado;
 
-public class empleado {
+public class empleado implements Comparable, Trabajador {
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
@@ -101,4 +102,22 @@ public class empleado {
 				+ "]";
 	}
 
+	// interfas
+	@Override
+	public int compareTo(Object o) {
+		Empleado otroEmpleado = (Empleado) o;
+
+		if (this.sueldo < otroEmpleado.getSueldo()) {
+			return 1;
+		}
+		if (this.sueldo > otroEmpleado.getSueldo()) {
+			return -1;
+
+		}
+		return 0;
+	}
+	@Override
+	public double establecerBonus(double gratificacion) {
+		return Trabajador.bonusBase + gratificacion;
+	}
 }

@@ -82,8 +82,8 @@ public class CPersona {
 
 	@Override
 	public String toString() {
-		return "CPersona [psNombre=" + psNombre + ", psApellido1=" + psApellido1 + ", pdNacimiento=" + pdNacimiento
-				+ ", piDni=" + piDni + "]";
+		return "CPersona [Nombre=" + psNombre + ", Apellido1=" + psApellido1 + ", Nacimiento=" + pdNacimiento
+				+ ", Dni=" + piDni + "]";
 	}
 
 }

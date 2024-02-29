@@ -1,6 +1,6 @@
 package variableStatic;
 
-public class jefatura extends empleado {
+public class jefatura extends empleado implements Jefe {
 	private double insentivo;
 
 	/**
@@ -40,6 +40,17 @@ public class jefatura extends empleado {
 	public String toString() {
 		return "jefatura [getInsentivo()=" + getInsentivo() + ", getSueldo()=" + getSueldo() + ", getNombre()="
 				+ getNombre() + ", getAltaContrato()=" + getAltaContrato() + ", getId()=" + getId() + "]";
+	}
+
+	@Override
+	public String tomarDecision(String decision) {
+		return " El jefe toma la decision de " + decision;
+	}
+
+	@Override
+	public double establecerBonus(double gratificacion) {
+		double prima = 2000;
+		return Trabajador.bonusBase + gratificacion + prima;
 	}
 
 }

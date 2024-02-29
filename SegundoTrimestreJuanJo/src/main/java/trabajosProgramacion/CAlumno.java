@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class CAlumno extends CPersona {
-	private CAsignatura paoAsignatura[] = new CAsignatura[3];
-	private ArrayList<Integer> paiNota = new ArrayList<>();
+	private ArrayList<CAsignatura> paoAsignatura = new ArrayList<>();
+	private ArrayList<Double> paiNota = new ArrayList<>();
 
 	/**
 	 * @param psNombre
@@ -18,46 +18,45 @@ public class CAlumno extends CPersona {
 	 * @param paoAsignatura
 	 * @param paiNota
 	 */
-	public CAlumno(String psNombre, String psApellido1, int año, int mes, int dia, int piDni, CAsignatura paoAsignatura,
-			int paiNota) {
+	public CAlumno(String psNombre, String psApellido1, int año, int mes, int dia, int piDni,
+			ArrayList<CAsignatura> paoAsignatura, double paiNota) {
 		super(psNombre, psApellido1, año, mes, dia, piDni);
-		this.paoAsignatura[0] = paoAsignatura;
+		this.paoAsignatura = paoAsignatura;
 		this.paiNota.add(paiNota);
 	}
 
 	/**
 	 * @return el paoAsignatura
 	 */
-	public CAsignatura[] getPaoAsignatura() {
+	public ArrayList<CAsignatura> getPaoAsignatura() {
 		return paoAsignatura;
 	}
 
 	/**
 	 * @param paoAsignatura el paoAsignatura a establecer
 	 */
-	public void setPaoAsignatura(CAsignatura[] paoAsignatura) {
+	public void setPaoAsignatura(ArrayList<CAsignatura> paoAsignatura) {
 		this.paoAsignatura = paoAsignatura;
 	}
 
 	/**
 	 * @return el paiNota
 	 */
-	public ArrayList<Integer> getPaiNota() {
+	public ArrayList<Double> getPaiNota() {
 		return paiNota;
 	}
 
 	/**
 	 * @param paiNota el paiNota a establecer
 	 */
-	public void setPaiNota(ArrayList<Integer> paiNota) {
+	public void setPaiNota(ArrayList<Double> paiNota) {
 		this.paiNota = paiNota;
 	}
 
 	@Override
 	public String toString() {
-		return "CAlumno [paoAsignatura=" + Arrays.toString(paoAsignatura) + ", paiNota=" + paiNota + ", getPsNombre()="
-				+ getPsNombre() + ", getPsApellido1()=" + getPsApellido1() + ", getPdNacimiento()=" + getPdNacimiento()
-				+ ", getPiDni()=" + getPiDni() + "]";
+		return "CAlumno [paoAsignatura=" + paoAsignatura + ", paiNota=" + paiNota + ", getPsNombre()=" + getPsNombre()
+				+ ", getPsApellido1()=" + getPsApellido1() + ", getPdNacimiento()=" + getPdNacimiento() + "]";
 	}
 
 }
