@@ -1,6 +1,5 @@
 package GestionEmpresa;
 
-import java.util.ArrayList;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.*;
@@ -85,6 +84,8 @@ public class EmpresaMain {
 	static void menu(ArrayList<EmpleadoAbstractHerencia> plantilla) {
 		boolean verdadero = false;
 		boolean ayuda = false;
+		// menu controlado por un bucle do while y capturando excepciones para que el
+		// usuario ingrese un numero
 		do {
 			int opcion;
 			System.out.println("Ingresa lo que deseas realizar:\n");
@@ -119,11 +120,14 @@ public class EmpresaMain {
 	}
 
 	static void viewSalary(ArrayList<EmpleadoAbstractHerencia> plantilla) {
+		// metodo que te muestra el nombre completo de los empleados y los salarios
+		// mediante un foreach con afirmaciones lambda
 		plantilla.forEach(objetos -> System.out.println(objetos.getNamecomplet() + " " + objetos.calcSalary()));
 
 	}
 
 	static void calcAvg(ArrayList<EmpleadoAbstractHerencia> plantilla) {
+		// decimal format para mostrar con dos decimales el avg
 		DecimalFormat df = new DecimalFormat("#.##");
 		double avgSalary;
 		boolean verdadero = false;
@@ -139,7 +143,6 @@ public class EmpresaMain {
 			try {
 				opcion = sc.nextInt();
 				verdadero = true;
-
 				for (int i = 0; i < plantilla.size(); i++) {
 
 					if (opcion == 1 && plantilla.get(i).getClass().getSimpleName().equalsIgnoreCase("Venta")) {
