@@ -1,6 +1,7 @@
 package GestionEmpresa;
 
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -103,7 +104,7 @@ public class EmpresaMain {
 					viewSalary(plantilla);
 					break;
 				case 3:
-// terminar
+					calcAvg(plantilla);
 					break;
 				default:
 					ayuda = true;
@@ -119,6 +120,56 @@ public class EmpresaMain {
 
 	static void viewSalary(ArrayList<EmpleadoAbstractHerencia> plantilla) {
 		plantilla.forEach(objetos -> System.out.println(objetos.getNamecomplet() + " " + objetos.calcSalary()));
+
+	}
+
+	static void calcAvg(ArrayList<EmpleadoAbstractHerencia> plantilla) {
+		DecimalFormat df = new DecimalFormat("#.##");
+		double avgSalary;
+		boolean verdadero = false;
+		double total = 0;
+		int opcion, contador = 0;
+		do {
+			System.out.println("Tipos de empleados:");
+			System.out.println("1. Ventas.");
+			System.out.println("2. Representantes.");
+			System.out.println("3. Producción.");
+			System.out.println("4. Mantenimiento.");
+			System.out.println("Ingresa la opcion (1)(2)(3)(4):");
+			try {
+				opcion = sc.nextInt();
+				verdadero = true;
+
+				for (int i = 0; i < plantilla.size(); i++) {
+
+					if (opcion == 1 && plantilla.get(i).getClass().getSimpleName().equalsIgnoreCase("Venta")) {
+						total += plantilla.get(i).calcSalary();
+						contador++;
+					}
+					if (opcion == 2 && plantilla.get(i).getClass().getSimpleName().equalsIgnoreCase("Representante")) {
+						total += plantilla.get(i).calcSalary();
+						contador++;
+
+					}
+					if (opcion == 3 && plantilla.get(i).getClass().getSimpleName().equalsIgnoreCase("Produccion")) {
+						total += plantilla.get(i).calcSalary();
+						contador++;
+					}
+					if (opcion == 4 && plantilla.get(i).getClass().getSimpleName().equalsIgnoreCase("Mantenimiento")) {
+						total += plantilla.get(i).calcSalary();
+						contador++;
+
+					}
+
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Ingresa un numero por favor!");
+				sc.nextLine();
+			}
+		} while (verdadero != true);
+
+		avgSalary = total / contador;
+		System.out.println("La media es: " + df.format(avgSalary));
 
 	}
 }
