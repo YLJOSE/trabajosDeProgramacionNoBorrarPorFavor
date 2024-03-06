@@ -55,8 +55,9 @@ public class CAlumno extends CPersona {
 
 	@Override
 	public String toString() {
-		return "CAlumno [paoAsignatura=" + paoAsignatura + ", paiNota=" + paiNota + ", getPsNombre()=" + getPsNombre()
-				+ ", getPsApellido1()=" + getPsApellido1() + ", getPdNacimiento()=" + getPdNacimiento() + "]";
+		return "CAlumno [Asignatura:" + paoAsignatura + ",\n\t paiNota:" + paiNota + ",\n\t gNombre:"
+				+ getPsNombre() + ",\n\t Apellido1:" + getPsApellido1() + ",\n\t Nacimiento:"
+				+ getPdNacimiento() + "]";
 	}
 
 }

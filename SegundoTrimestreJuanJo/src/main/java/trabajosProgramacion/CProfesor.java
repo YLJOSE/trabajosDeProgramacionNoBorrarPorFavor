@@ -53,9 +53,8 @@ public class CProfesor extends CPersona {
 
 	@Override
 	public String toString() {
-		return "CProfesor [Sueldo=" + puSueldo + ", Titulo=" + psTitulo + ", Nombre=" + getPsNombre()
-				+ ", Apellido1=" + getPsApellido1() + ", Nacimiento=" + getPdNacimiento()
-				+ ", PiDni=" + getPiDni() + "]";
+		return this.getClass().getSimpleName() + "\n\tSueldo:" + puSueldo + ",\n\t Titulo:" + psTitulo
+				+ ", \n\t Nombre:" + getPsNombre() + ",\n\t Apellido1:" + getPsApellido1() + "]";
 	}
 
 }

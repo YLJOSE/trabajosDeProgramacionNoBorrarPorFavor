@@ -78,8 +78,8 @@ public class CAsignatura {
 
 	@Override
 	public String toString() {
-		return "CAsignatura [Codigo=" + piCodigo + ", Nombre=" + psNombre + ", profesor=" + profesorNuevo
-				+ ", HorasSemanales=" + piHorasSemanales + "]";
+		return " Nombre:" + psNombre + ",\n\t profesor:" + profesorNuevo + ",\n\t HorasSemanales:"
+				+ piHorasSemanales + "]";
 	}
 
 }
