@@ -1,17 +1,17 @@
 package Guerra;
 
-import java.time.LocalDate;
+import java.time.LocalTime;
 
 public abstract class Personaje {
 	private final double VIDA_INICIAL = 10;
-	private final double MINUTOS = 0;
+	private final double MINUTOS = 5;
 
 	private String nombre;
 	private boolean calzado = true;
 	private double vida = VIDA_INICIAL;
 	private boolean acuchillado = false;
-	private boolean disparo = false;
-	private LocalDate tiempo = null;
+	private boolean disparado = false;
+	private LocalTime tiempo = null;
 
 	/**
 	 * @param nombre
@@ -80,35 +80,35 @@ public abstract class Personaje {
 	/**
 	 * @return el disparo
 	 */
-	public boolean isDisparo() {
-		return disparo;
+	public boolean isDisparado() {
+		return disparado;
 	}
 
 	/**
 	 * @param disparo el disparo a establecer
 	 */
-	public void setDisparo(boolean disparo) {
-		this.disparo = disparo;
+	public void setDisparado(boolean disparo) {
+		this.disparado = disparo;
 	}
 
 	/**
 	 * @return el tiempo
 	 */
-	public LocalDate getTiempo() {
+	public LocalTime getTiempo() {
 		return tiempo;
 	}
 
 	/**
 	 * @param tiempo el tiempo a establecer
 	 */
-	public void setTiempo(LocalDate tiempo) {
+	public void setTiempo(LocalTime tiempo) {
 		this.tiempo = tiempo;
 	}
 
 	@Override
 	public String toString() {
 		return "nombre:" + nombre + ", calzado:" + calzado + ", vida:" + vida + ", acuchillado:" + acuchillado
-				+ ", disparo:" + disparo + ", tiempo:" + tiempo + "]";
+				+ ", disparo:" + disparado + ", tiempo:" + tiempo + "]";
 	}
 
 }
