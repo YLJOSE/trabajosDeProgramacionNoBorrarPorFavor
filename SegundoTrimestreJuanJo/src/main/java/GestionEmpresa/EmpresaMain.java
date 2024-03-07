@@ -122,6 +122,7 @@ public class EmpresaMain {
 	static void viewSalary(ArrayList<EmpleadoAbstractHerencia> plantilla) {
 		// metodo que te muestra el nombre completo de los empleados y los salarios
 		// mediante un foreach con afirmaciones lambda
+		Collections.sort(plantilla);
 		plantilla.forEach(objetos -> System.out.println(objetos.getNamecomplet() + " " + objetos.calcSalary()));
 
 	}

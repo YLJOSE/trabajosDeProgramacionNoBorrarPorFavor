@@ -2,7 +2,7 @@ package GestionEmpresa;
 
 import java.time.LocalDate;
 
-public abstract class EmpleadoAbstractHerencia {
+public abstract class EmpleadoAbstractHerencia implements Comparable<EmpleadoAbstractHerencia> {
 	private String name;
 	private String lastName;
 	private int years;
@@ -87,4 +87,16 @@ public abstract class EmpleadoAbstractHerencia {
 		this.dateAdmission = dateAdmission;
 	}
 
+	@Override
+	public int compareTo(EmpleadoAbstractHerencia o) {
+
+		if (this.getYears() > o.getYears()) {
+
+			return 1;
+		} else if (this.getYears() < o.getYears()) {
+			return -1;
+		} else {
+			return 0;
+		}
+	}
 }

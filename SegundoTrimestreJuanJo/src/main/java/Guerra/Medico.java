@@ -16,6 +16,9 @@ public class Medico extends Sanitario {
 			personaje.setVida(personaje.getVida() + 1);
 			System.out.println(personaje.getNombre() + " " + personaje.getVida() + " ha sido curado!");
 		}
+		else {
+			System.out.println("Personaje no requiere curar!!");
+		}
 	}
 
 	@Override
