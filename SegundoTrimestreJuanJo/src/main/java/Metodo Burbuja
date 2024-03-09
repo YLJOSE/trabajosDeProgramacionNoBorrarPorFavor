@@ -1,0 +1,40 @@
+// revisar metodo burbuja paa ordenar datos
+public static void ordenarLista(ArrayList<Viajero> lista) {
+    for (int i = 0; i < lista.size(); i++) {
+        for (int j = 0; j < lista.size(); j++) {
+            if(lista.get(i).getComida() < lista.get(j).getComida()) {
+                Viajero aux = lista.get(i);
+                lista.set(i, lista.get(j));
+                lista.set(j, aux);
+            }
+        }
+    }
+}
+/***********************************************************/
+// metodo burbuja en forma ascendente
+public static void burbuja_ascendente(ArrayList<Viajero>arreglo){
+    for(int i=0;i<arreglo.size();i++){
+        Viajero temporal;
+        for(int j=i+1;j<arreglo.size();j++){
+            if(arreglo.get(i).getComida()>arreglo.get(j).getComida()){
+                temporal=arreglo.get(j);
+                arreglo.set(j,arreglo.get(i));
+                arreglo.set(i,temporal);
+            }
+        }
+    }
+}
+/******************************************************************/
+//metodo burbuja en forma descendente
+public static void burbuja_descendente(ArrayList<Viajero>arreglo){
+    for(int i=0;i<arreglo.size();i++){
+        Viajero temporal;
+        for(int j=i+1;j<arreglo.size();j++){
+            if(arreglo.get(i).getComida()<arreglo.get(j).getComida()){
+                temporal=arreglo.get(j);
+                arreglo.set(j,arreglo.get(i));
+                arreglo.set(i,temporal);
+            }
+        }
+    }
+}
